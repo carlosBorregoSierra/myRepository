@@ -1,0 +1,75 @@
+:root{
+    --color-text-titulos: #ffffff;
+    --color-texto: rgba(255, 255, 255, 0.867);
+    --color-acento: #E6E4C6;
+    --color-fondo: #1c1f20;
+        --color-fondo-tarjeta: #212c9c27;
+}
+
+body{
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: grid;
+    grid-template-areas: 
+    "aside header"
+    "aside main"
+    "footer footer"
+    ;
+    grid-template-columns: 220px 1fr;
+}
+
+header{
+    grid-area: header;
+    background-image: url(./img/fondo.jpg);
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div{
+    margin: 40px;
+}
+
+a:not(footer a){
+    color: var(--color-fondo);
+    text-decoration: none;
+    background-color: var(--color-acento);
+    border-radius: 5px;
+    padding: 10px 40px;
+}
+
+header img{
+    max-width: 270px;
+    flex-shrink: 1;
+    margin-right: 50px;
+}
+
+#tarjetasContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.proyecto{
+    flex-basis: 314px;
+}
+
+.tarjeta{
+    background-color: var(--color-fondo-tarjeta);
+}
+
+aside{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
+
+footer a{
+    color: var(--color-texto);
+}
+
+main{
+    grid-area: main;
+}
