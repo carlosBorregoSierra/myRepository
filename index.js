@@ -5,18 +5,21 @@ const getTecnologias =(tecnologias)=>{
     tecnologias.forEach(tecnologia=>{
         res+=`<span class="tecnologia">${tecnologia}</span>`
     })
+    return res;
 }
 
 proyectos.forEach(proyecto =>{
     const nuevoProyecto = document.createElement("div");
-    nuevoProyecto.classList = "tarjeta"
+    nuevoProyecto.classList = "tarjeta proyecto"
     nuevoProyecto.textContent = proyecto.titulo;
     proyectosContainer.appendChild(nuevoProyecto);
     nuevoProyecto.innerHTML = `
-    <img src="${proyecto.imagen}">
-    <h3>${proyecto.titulo}</h3>
-    <p>${proyecto.descripcion}</p>
-    <p>Tecnologias: ${getTecnologias(proyecto.tecnologias)}</p>
+    <img src="img/proyectos/${proyecto.imagen}">
+    <div>
+        <h3>${proyecto.titulo}</h3>
+        <p>${proyecto.descripcion}</p>
+        <p>Tecnologias: ${getTecnologias(proyecto.tecnologias)}</p>
+    </div>
     <a href="${proyecto.link}" target="_blank">Ver proyecto</a>
     `
 })
