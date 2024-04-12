@@ -19,6 +19,10 @@ body{
     grid-template-columns: 220px 1fr;
 }
 
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-text-titulos);
+}
+
 header{
     grid-area: header;
     background-image: url(./img/fondo.jpg);
@@ -103,6 +107,24 @@ header img{
 
 aside{
     grid-area: aside;
+}
+
+aside>div{
+    padding: 20px 0;
+    border-bottom: 2px solid var(--color-fondo);
+}
+
+aside img{
+    max-width: 110%;
+}
+
+.presentacion div, .idioma div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.presentacion span:last-of-type, .idioma span:last-of-type{
+    color: var(--color-text-titulos);
 }
 
 footer{

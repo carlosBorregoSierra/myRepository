@@ -1,4 +1,5 @@
 const proyectosContainer = document.getElementById("tarjetasContainer")
+const aside = document.getElementsByTagName("aside")[0];
 
 const getTecnologias =(tecnologias)=>{
     let res ="";
@@ -8,6 +9,7 @@ const getTecnologias =(tecnologias)=>{
     return res;
 }
 
+//Creacion proyectos
 proyectos.forEach(proyecto =>{
     const nuevoProyecto = document.createElement("div");
     nuevoProyecto.classList = "tarjeta proyecto"
@@ -23,3 +25,47 @@ proyectos.forEach(proyecto =>{
     <a href="${proyecto.link}" target="_blank">Ver proyecto</a>
     `
 })
+
+//Creacion  info personal
+const nuevaPresentacion = document.createElement("div");
+nuevaPresentacion.classList = "presentacion";
+nuevaPresentacion.innerHTML = `
+    <img src="${informacionPersonal.imagen}">
+`;
+informacionPersonal.otros.forEach(dato =>{
+    nuevaPresentacion.innerHTML +=`
+        <div>
+            <span>${dato[0]}:</span>
+            <span>${dato[1]}</span>
+        </div>
+    `
+})
+aside.appendChild(nuevaPresentacion);
+
+//Creacion idiomas
+const nuevoIdiomas = document.createElement("div");
+nuevoIdiomas.classList =  "idioma";
+informacionPersonal.idiomas.forEach(dato =>{
+    nuevoIdiomas.innerHTML +=`
+        <div>
+            <span>${dato[0]}:</span>
+            <span>${dato[1]}</span>
+        </div>
+    `;
+})
+aside.appendChild(nuevoIdiomas);
+
+//Creacion Lenguajes de programacion
+const nuevoLenguaje = document.createElement("div");
+nuevoLenguaje.classList = "lenguaje";
+informacionPersonal.tecnologias.forEach(dato =>{
+    nuevoLenguaje.innerHTML += `
+        <div>
+            <span>${dato[0]}:</span>
+            <span>${dato[0]}:</span>
+        </div>
+    `
+})
+aside.appendChild(nuevoLenguaje);
+
+//Links
