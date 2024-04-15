@@ -7,6 +7,7 @@
 }
 
 body{
+    margin: 0;
     background-color: var(--color-fondo);
     color: var(--color-texto);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -47,7 +48,7 @@ a:not(footer a){
 header img{
     max-width: 270px;
     flex-shrink: 1;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 #tarjetasContainer{
@@ -83,6 +84,7 @@ header img{
     object-fit: cover;
     filter: grayscale(0.8);
     transition: 0.3s;
+    border-radius: 5px 5px 0 0;
 }
 
 .proyecto:hover img{
@@ -107,18 +109,28 @@ header img{
 
 aside{
     grid-area: aside;
+    padding: 0px 20px;
+    border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 aside>div{
     padding: 20px 0;
-    border-bottom: 2px solid var(--color-fondo);
+    border-bottom: 2px solid var(--color-acento);
+}
+
+aside>div:last-of-type{
+   border-bottom: unset;
 }
 
 aside img{
     max-width: 110%;
+    max-height: 200px;
+    display: block;
+    margin: auto;
 }
 
-.presentacion div, .idioma div{
+.presentacion div, .idioma div, .lenguaje div{
     display: flex;
     justify-content: space-between;
 }
@@ -127,8 +139,40 @@ aside img{
     color: var(--color-text-titulos);
 }
 
+progress{
+    -webkit-appearance: none;
+}
+
+::-webkit-progress-bar{
+    background-color: var(--color-fondo);
+}
+
+::-webkit-progress-inner-element{
+    height: 5px;
+}
+
+::-webkit-progress-value{
+    background-color: var(--color-acento);
+}
+
+.redes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.redes a{
+    background-color: unset;
+    padding: unset;
+}
+
+.redes img{
+    height: 30px;
+    filter: invert(1);
+}
+
 footer{
     grid-area: footer;
+    text-align: center;
 }
 
 footer a{
@@ -137,4 +181,18 @@ footer a{
 
 main{
     grid-area: main;
+}
+
+@media(max-width:650px){
+    header{
+      margin-left: unset;
+      border-radius: unset;
+    }
+    header img{
+      display: none;
+    }
+    body{
+      grid-template-columns: 1fr;
+      grid-template-areas: "header" "aside" "main" "footer";
+    }
 }

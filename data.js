@@ -60,9 +60,10 @@ const informacionPersonal = {
         ],["Ionic",7],["Node",6],["Python",5],["C#",3]
     ],
     redes: [
+        ["facebook", "https://www.facebook.com/carlos.a.borrego.91/"],
         ["github", "https://github.com/carlosBorregoSierra"],
         ["linkedin", "https://www.linkedin.com/in/carlos-borrego-33763622a/"],
-        ["youtube", "https://www.youtube.com/@puntoJson"],
+        ["youtube", "https://www.youtube.com/channel/UCJvC_lXNCy7VeNXkUYB6_aQ"],
         ["instagram", "https://www.instagram.com/carlosalbertoborrego/"],
     ]
 }

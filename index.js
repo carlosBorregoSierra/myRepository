@@ -62,10 +62,42 @@ informacionPersonal.tecnologias.forEach(dato =>{
     nuevoLenguaje.innerHTML += `
         <div>
             <span>${dato[0]}:</span>
-            <span>${dato[0]}:</span>
+            <span>${dato[1]}</span>
         </div>
+        <progress max="10" value=${dato[1]}>
     `
 })
 aside.appendChild(nuevoLenguaje);
 
+const getIconoRed =(redes)=>{
+    const urlBase = "img/iconos/";
+    switch(redes){
+        case "instagram":
+            return urlBase+"instagram.svg"
+        case "linkedin":
+            return urlBase+"linkedin.svg";
+        case "facebook":
+            return urlBase+"square-facebook.svg";
+        case "twitter":
+            return urlBase+"twitter.svg";
+        case "youtube":
+            return urlBase+"youtube.svg";
+        case "github":
+            return urlBase+"github.svg";
+        default:
+            return urlBase+"globe-solid.svg";
+    }
+}
+
 //Links
+const nuevoRedes = document.createElement("div");
+nuevoRedes.classList = "redes";
+informacionPersonal.redes.forEach(dato => {
+    if(dato[1]==="")return;
+    nuevoRedes.innerHTML +=`
+    <a href=${dato[1]} target="_blank">
+        <img src=${getIconoRed(dato[0])}>
+    </a>
+    `
+})
+aside.appendChild(nuevoRedes);
